@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pipataki — VoiceController</title>
+  <meta name="description" content="VoiceController: control del ordenador por voz, pensado para la accesibilidad. Software libre (LGPLv3).">
+  <style>
+    :root {
+      --fondo: #ffffff; --texto: #1a1a1a; --suave: #4a4a4a;
+      --enlace: #0a58ca; --borde: #d0d0d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #111111; --texto: #f2f2f2; --suave: #c8c8c8;
+              --enlace: #8ab4ff; --borde: #3a3a3a; }
+    }
+    html { font-size: 112.5%; }
+    body {
+      margin: 0; background: var(--fondo); color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    header img { width: 80px; height: 80px; border-radius: 50%; }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+    p, li { max-width: 38rem; }
+    .estado { color: var(--suave); }
+    a { color: var(--enlace); text-underline-offset: 0.15em; }
+    a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
+    section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="logo.png" alt="Logotipo de pipataki">
+      <h1>VoiceController</h1>
+    </header>
+
+    <p><strong>Control del ordenador por voz, pensado para la accesibilidad.</strong>
+      Hablas, y el ordenador hace: mover el puntero, pulsar, escribir al dictado,
+      manejar ventanas, abrir carpetas.</p>
+
+    <ul>
+      <li>Funciona en <strong>Linux</strong> (KDE Plasma) y en <strong>Windows</strong>,
+        con una app para <strong>Android</strong> que hace de micrófono y de mando.</li>
+      <li>El reconocimiento de voz va <strong>en tu propio ordenador</strong>: tu voz no
+        se envía a ningún sitio.</li>
+      <li>Es <strong>software libre</strong>, con licencia LGPLv3.</li>
+    </ul>
+
+    <p class="estado">Está en desarrollo (versión 0.2.0). Muy pronto, aquí mismo: la
+      descarga, el manual y las notas de desarrollo.</p>
+
+    <h2>Contacto</h2>
+    <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
+
+    <section lang="en" aria-labelledby="en-titulo">
+      <h2 id="en-titulo">In English</h2>
+      <p><strong>VoiceController</strong> lets you control your computer by voice,
+        built with accessibility in mind. It runs on Linux and Windows, with an
+        Android app as a remote microphone. Speech recognition stays on your own
+        computer. Free software (LGPLv3), currently in development. Downloads,
+        the manual and development notes are coming soon.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 pipataki</p>
+    </footer>
+  </main>
+</body>
+</html>
