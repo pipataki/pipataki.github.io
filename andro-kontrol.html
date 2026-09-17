@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pipataki — Andro-Kontrol</title>
+  <meta name="description" content="Andro-Kontrol: maneja el móvil por voz y con el movimiento de la cabeza. Pensado para la accesibilidad.">
+  <style>
+    :root {
+      --fondo: #ffffff; --texto: #1a1a1a; --suave: #4a4a4a;
+      --enlace: #0a58ca; --borde: #d0d0d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #111111; --texto: #f2f2f2; --suave: #c8c8c8;
+              --enlace: #8ab4ff; --borde: #3a3a3a; }
+    }
+    html { font-size: 112.5%; }
+    body {
+      margin: 0; background: var(--fondo); color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    header img { width: 80px; height: 80px; border-radius: 50%; }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+    p, li { max-width: 38rem; }
+    .estado { color: var(--suave); }
+    a { color: var(--enlace); text-underline-offset: 0.15em; }
+    a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
+    section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
+    nav a[aria-current="page"] { font-weight: 700; color: var(--texto); text-decoration: none; }
+    footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Proyectos">
+      <a href="index.html">VoiceController</a> ·
+      <a href="andro-kontrol.html" aria-current="page">Andro-Kontrol</a>
+    </nav>
+
+    <header>
+      <img src="logo.png" alt="Logotipo de pipataki">
+      <h1>Andro-Kontrol</h1>
+    </header>
+
+    <p><strong>Maneja el móvil hablando y moviendo la cabeza.</strong> Pensado
+      para quien no puede usar las manos, o no siempre.</p>
+
+    <ul>
+      <li>Un <strong>puntero</strong> que sigue tu nariz con la cámara frontal.
+        También se mueve <strong>por voz</strong>, con las direcciones de la
+        brújula: «norte», «este cincuenta»…</li>
+      <li><strong>Comandos de voz</strong> para lo demás: pulsar, pulsación larga,
+        atrás, inicio, recientes, desplazar, abrir apps, cerrar, salir,
+        pestañas… y los botones de cualquier app por su nombre («enviar»,
+        «buscar», «pulsa descargar»).</li>
+      <li><strong>Dictado</strong>: al aparecer el cursor en un campo de texto
+        dictas, y con «entra» se escribe. No hace falta el teclado.</li>
+      <li><strong>Se aparta durante las llamadas</strong> y vuelve al colgar: el
+        móvil sigue siendo un teléfono.</li>
+      <li><strong>Todo ocurre en el móvil</strong>: la imagen de la cámara no sale
+        de ahí y los comandos se reconocen sin conexión.</li>
+    </ul>
+
+    <p class="estado">Está en desarrollo: versión 0.1.0 (alpha). Se usa a diario
+      en el móvil de pruebas, un Motorola Moto G31 con Android 12, pero espera
+      fallos y cambios entre versiones.</p>
+
+    <h2>Descarga</h2>
+    <ul>
+      <li><a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.1.0-alpha/Andro-Kontrol-0.1.0-alpha.apk">Andro-Kontrol
+        0.1.0 alpha</a> (apk, 68 MB). Lleva dentro el reconocimiento de voz en
+        español, así que no necesita conexión para los comandos.</li>
+      <li>Manual en PDF, que se puede leer con lector de pantalla:
+        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.1.0-alpha/Andro-Kontrol_Manual_0.1.0-alpha_ES.pdf">en español</a>
+        o <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.1.0-alpha/Andro-Kontrol_Manual_0.1.0-alpha_EN.pdf" hreflang="en">en inglés</a>.</li>
+      <li>Todas las versiones, en
+        <a href="https://github.com/pipataki/Andro-Kontrol/releases">GitHub</a>.</li>
+    </ul>
+
+    <h3>Cómo se instala</h3>
+    <ol>
+      <li>Descarga la APK en el móvil.</li>
+      <li>Ábrela con <strong>Archivos (Files) de Google</strong>. Con otros
+        gestores, Android puede no dejar instalar: la app que abre el fichero
+        necesita permiso para instalar aplicaciones.</li>
+      <li>Android pedirá permiso para instalar apps de origen desconocido, y
+        Play Protect puede analizarla antes. Es lo normal en cualquier app que
+        no venga de Google Play.</li>
+      <li>Abre Andro-Kontrol y concede los permisos que pida desde el menú ⋮ →
+        Ajustes: accesibilidad, cámara, micrófono, teléfono y mantener la
+        pantalla en vertical.</li>
+    </ol>
+
+    <h3>Comprobar que la APK es la nuestra</h3>
+    <p>Todas las versiones se firman con el mismo certificado:</p>
+    <p><code>SHA-256: 40:EA:E6:CA:4A:6C:CE:5D:38:D6:61:A4:8D:9B:64:18:25:4F:01:3E:D7:75:83:4A:98:3B:E9:82:73:AF:C2:29</code></p>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Android 8 o superior, procesador ARM de 64 bits.</li>
+      <li>Para el dictado, el reconocimiento de voz del propio móvil.</li>
+    </ul>
+
+    <h2>Licencia y créditos</h2>
+    <p>Andro-Kontrol es © 2026 pipataki, todos los derechos reservados: se
+      reparte la aplicación, no el código fuente. Lleva dentro componentes con
+      licencia Apache 2.0, de Alpha Cephei (Vosk y su modelo de voz español),
+      Google (MediaPipe y su modelo de puntos de la cara), el proyecto Android
+      (CameraX) y el proyecto JNA. El robot del icono es un dibujo propio, no
+      el androide de Google.</p>
+    <p>El proyecto hermano para el ordenador,
+      <a href="index.html">VoiceController</a>, sí es software libre (LGPLv3).</p>
+
+    <h2>Contacto</h2>
+    <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
+
+    <section lang="en" aria-labelledby="en-titulo">
+      <h2 id="en-titulo">In English</h2>
+      <p><strong>Andro-Kontrol</strong> lets you use your Android phone by voice
+        and by moving your head, built with accessibility in mind. A pointer
+        follows your nose through the front camera (or moves by voice, with
+        compass directions), voice commands do the tapping, scrolling, app
+        switching and more, and dictation writes into any text field. It steps
+        aside during phone calls. Everything runs on the phone: the camera image
+        never leaves it and commands are recognised offline. Currently an alpha
+        (0.1.0), tested on a Motorola Moto G31 with Android 12.
+        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.1.0-alpha/Andro-Kontrol-0.1.0-alpha.apk">Download
+        the APK</a> (68 MB) and open it with Google Files to install. The app is
+        © 2026 pipataki, all rights reserved; the source code is not published.
+        There is a <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.1.0-alpha/Andro-Kontrol_Manual_0.1.0-alpha_EN.pdf">manual in English</a>.
+        It bundles Apache 2.0 components (Vosk, MediaPipe, CameraX, JNA).</p>
+    </section>
+
+    <footer>
+      <p>© 2026 pipataki</p>
+    </footer>
+  </main>
+</body>
+</html>

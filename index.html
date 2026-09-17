@@ -30,11 +30,17 @@
     a { color: var(--enlace); text-underline-offset: 0.15em; }
     a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
     section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
+    nav a[aria-current="page"] { font-weight: 700; color: var(--texto); text-decoration: none; }
     footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
   </style>
 </head>
 <body>
   <main>
+    <nav aria-label="Proyectos">
+      <a href="index.html" aria-current="page">VoiceController</a> ·
+      <a href="andro-kontrol.html">Andro-Kontrol</a>
+    </nav>
     <header>
       <img src="logo.png" alt="Logotipo de pipataki">
       <h1>VoiceController</h1>
@@ -67,6 +73,11 @@
     </ul>
     <p>Todas las versiones y el código fuente están en
       <a href="https://github.com/pipataki/VoiceController">GitHub</a>.</p>
+
+    <h2>Andro-Kontrol, para el móvil</h2>
+    <p>Hay un proyecto hermano que maneja <strong>el propio móvil</strong> por voz
+      y con el movimiento de la cabeza:
+      <a href="andro-kontrol.html">Andro-Kontrol</a> (alpha).</p>
 
     <h2>Contacto</h2>
     <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
