@@ -71,6 +71,10 @@
       <li><strong>Convive con tu asistente</strong>: si dices «alexa»,
         Andro-Kontrol se apaga solo y vuelve cuando ella termina de hablar, así
         no confunde su voz con órdenes tuyas.</li>
+      <li><strong>Bloqueo por voz</strong> (opcional, y viene apagado): un
+        candado que solo abre tu voz, diciendo tu santo y seña. Si no te
+        reconoce, manda el móvil a su pantalla de bloqueo. Lee el aviso antes
+        de encenderlo.</li>
       <li><strong>Todo ocurre en el móvil</strong>: la imagen de la cámara no sale
         de ahí y los comandos se reconocen sin conexión.</li>
     </ul>
@@ -79,14 +83,37 @@
       en el móvil de pruebas, (API-Android 12). Si se detectan fallos por uso, se
       agradece el reporte.</p>
 
+    <h2>Aviso sobre el bloqueo por voz</h2>
+    <p><strong>Encenderlo es decisión tuya, y el riesgo también.</strong> Úsalo
+      con precaución y sabiendo lo que hace y lo que no:</p>
+    <ul>
+      <li><strong>No es seguridad fuerte.</strong> Una voz se puede grabar e
+        imitar, y el parecido se mide con un margen. Quien guarda el móvil de
+        verdad es su propio bloqueo (huella, PIN o patrón): esto es una capa
+        más encima, nunca un sustituto.</li>
+      <li><strong>Puede no reconocerte</strong>: si exiges mucho parecido, si
+        estás afónico, si hay ruido o si el micrófono está tapado. No te deja
+        sin móvil —sigues entrando con tu huella o tu PIN, y puedes apagar
+        Andro-Kontrol con su botón—, pero incordia.</li>
+      <li><strong>Manda el móvil a la pantalla de bloqueo</strong> en cada
+        intento que no reconoce, y cuando se cumplen las esperas.</li>
+    </ul>
+    <p>Se enciende, se apaga y se ajusta en <strong>⋮ → Ajustes → Bloqueo por
+      voz</strong>, con Andro-Kontrol apagado: allí se graba el perfil de voz y
+      el santo y seña, se marca o se desmarca la casilla, y se ajustan el
+      parecido exigido (de partida 38 %, con tope 47 % para que no puedas
+      dejarte fuera) y las dos esperas: candado abierto, de 7 a 10 minutos sin
+      oírte; candado cerrado, de 30 a 60 segundos, hables o no. El manual lo
+      explica entero.</p>
+
     <h2>Descarga</h2>
     <ul>
-      <li><a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.1-beta/Andro-Kontrol-0.9.1-beta.apk">Andro-Kontrol
-        0.9.1 beta</a> (apk, 68 MB). Lleva dentro el reconocimiento de voz en
+      <li><a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.3-beta/Andro-Kontrol-0.9.3-beta.apk">Andro-Kontrol
+        0.9.1 beta</a> (apk, 81 MB). Lleva dentro el reconocimiento de voz en
         español, así que no necesita conexión para los comandos.</li>
       <li>Manual en PDF, que se puede leer con lector de pantalla:
-        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.1-beta/Andro-Kontrol_Manual_0.9.1-beta_ES.pdf">en español</a>
-        o <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.1-beta/Andro-Kontrol_Manual_0.9.1-beta_EN.pdf" hreflang="en">en inglés</a>.</li>
+        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.3-beta/Andro-Kontrol_Manual_0.9.3-beta_ES.pdf">en español</a>
+        o <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.3-beta/Andro-Kontrol_Manual_0.9.3-beta_EN.pdf" hreflang="en">en inglés</a>.</li>
       <li>Todas las versiones, en
         <a href="https://github.com/pipataki/Andro-Kontrol/releases">GitHub</a>.</li>
     </ul>
@@ -101,13 +128,13 @@
         Play Protect puede analizarla antes. Es lo normal en cualquier app que
         no venga de Google Play.</li>
       <li>Abre Andro-Kontrol y concede los permisos que pida desde el menú ⋮ →
-        Ajustes: accesibilidad, cámara, micrófono, teléfono y mantener la
-        pantalla en vertical.</li>
+        Ajustes: accesibilidad, cámara, micrófono, teléfono, responder llamadas,
+        llamar y agenda, y mantener la pantalla en vertical.</li>
     </ol>
 
     <h3>Comprobar que la APK es la nuestra</h3>
     <p>Todas las versiones se firman con el mismo certificado:</p>
-    <p>APK (0.9.1 beta) SHA-256: <code>71ac3294afb16edd76099b6ffd3669e7b278dc671261418e453408ac32ff3046</code></p>
+    <p>APK (0.9.1 beta) SHA-256: <code>0efd5f568b3974534f58af6270e25cd147dccd3cb78bd2f23c4adbc90e87c178</code></p>
     <p><code>SHA-256: 40:EA:E6:CA:4A:6C:CE:5D:38:D6:61:A4:8D:9B:64:18:25:4F:01:3E:D7:75:83:4A:98:3B:E9:82:73:AF:C2:29</code></p>
 
     <h2>Requisitos</h2>
@@ -136,13 +163,16 @@
         follows your nose through the front camera (or moves by voice, with
         compass directions), voice commands do the tapping, scrolling, app
         switching and more, and dictation writes into any text field. It steps
-        aside during phone calls. Everything runs on the phone: the camera image
+        aside during phone calls. There is an optional <strong>voice lock</strong>,
+        off by default: a padlock that only your own voice opens. It is one more
+        layer, not strong security — a voice can be recorded — and turning it on
+        is your own call; the manual explains the risks and how to set it up. Everything runs on the phone: the camera image
         never leaves it and commands are recognised offline. Currently a beta
         (0.9.1), tested on a Motorola Moto G31 with Android 12.
-        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.1-beta/Andro-Kontrol-0.9.1-beta.apk">Download
-        the APK</a> (68 MB) and open it with Google Files to install. The app is
+        <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.3-beta/Andro-Kontrol-0.9.3-beta.apk">Download
+        the APK</a> (81 MB) and open it with Google Files to install. The app is
         © 2026 pipataki, all rights reserved; the source code is not published.
-        There is a <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.1-beta/Andro-Kontrol_Manual_0.9.1-beta_EN.pdf">manual in English</a>.
+        There is a <a href="https://github.com/pipataki/Andro-Kontrol/releases/download/v0.9.3-beta/Andro-Kontrol_Manual_0.9.3-beta_EN.pdf">manual in English</a>.
         It bundles Apache 2.0 components (Vosk, MediaPipe, CameraX, JNA).</p>
     </section>
 
