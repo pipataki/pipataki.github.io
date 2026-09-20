@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pipataki — Pipe-Políglota</title>
+  <meta name="description" content="Pipe-Políglota (Pi-Po): habla en español y el móvil lo dice en otro idioma. Traduce sin conexión y aprende de sus fallos.">
+  <style>
+    :root {
+      --fondo: #ffffff; --texto: #1a1a1a; --suave: #4a4a4a;
+      --enlace: #0a58ca; --borde: #d0d0d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #111111; --texto: #f2f2f2; --suave: #c8c8c8;
+              --enlace: #8ab4ff; --borde: #3a3a3a; }
+    }
+    html { font-size: 112.5%; }
+    body {
+      margin: 0; background: var(--fondo); color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    header img { width: 80px; height: 80px; border-radius: 50%; }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+    p, li { max-width: 38rem; }
+    .estado { color: var(--suave); }
+    a { color: var(--enlace); text-underline-offset: 0.15em; }
+    a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
+    section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
+    nav a[aria-current="page"] { font-weight: 700; color: var(--texto); text-decoration: none; }
+    footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Proyectos">
+      <a href="index.html">VoiceController</a> ·
+      <a href="andro-kontrol.html">Andro-Kontrol</a> ·
+      <a href="pi-po.html" aria-current="page">Pipe-Políglota</a>
+    </nav>
+
+    <header>
+      <img src="pipo-icono.png" alt="Icono de Pipe-Políglota: un androide rodeado de saludos en varios alfabetos">
+      <h1>Pipe-Políglota</h1>
+    </header>
+
+    <p><strong>Habla en español y el móvil lo dice en otro idioma.</strong> Para
+      viajar, para entenderse con quien no habla tu lengua, y pensado —como sus
+      hermanas— para poder usarse sin manos.</p>
+
+    <ul>
+      <li><strong>Di el idioma y luego la frase</strong>: «inglés», «francés»,
+        «alemán», «griego», «chino»… y a continuación lo que quieras decir. Sin
+        menús ni botones.</li>
+      <li><strong>Traduce en el propio móvil</strong>: cada idioma se descarga
+        una vez (unos 30 MB) y después funciona hasta en modo avión.</li>
+      <li><strong>Lo dice en voz alta</strong>, con la voz del idioma de
+        destino, y puedes hacer que lo repita.</li>
+      <li><strong>Comprueba lo que va a decir</strong>: antes de hablar traduce
+        la frase <em>de vuelta</em> y mira qué se ha perdido. Si algo baila, lo
+        avisa; y muchas veces lo arregla solo.</li>
+      <li><strong>Aprende de sus fallos</strong>: cuando un término se le
+        atraganta —«misa» en francés, «la Gran Muralla China» en chino— propone
+        la corrección, la prueba en la frase entera y se la queda si encaja. Lo
+        aprendido solo se aplica cuando mejora la frase.</li>
+      <li><strong>Distingue preguntas de afirmaciones</strong> por las palabras
+        y por el tono de tu voz, y eso cambia la traducción.</li>
+      <li><strong>Te cuenta lo que hace</strong>: el androide de la pantalla
+        pone la oreja mientras te escucha, se queda pensando mientras traduce y
+        mueve la boca mientras habla.</li>
+    </ul>
+
+    <p class="estado">Versión 1.0.0. Probada a diario en un móvil con Android
+      12; en otros puede haber diferencias, sobre todo en las voces instaladas.
+      Si se detectan fallos por uso, se agradece el reporte.</p>
+
+    <h2>Descarga</h2>
+    <ul>
+      <li><a href="https://github.com/pipataki/Pipe-Poliglota/releases/download/v1.0.0/Pipe-Poliglota-1.0.0.apk">Pipe-Políglota
+        1.0.0</a> (apk). Lleva dentro el reconocimiento de la orden de idioma,
+        así que esa parte no necesita conexión.</li>
+      <li>Todas las versiones, en
+        <a href="https://github.com/pipataki/Pipe-Poliglota/releases">GitHub</a>.</li>
+    </ul>
+
+    <h3>Cómo se instala</h3>
+    <ol>
+      <li>Descarga la APK en el móvil.</li>
+      <li>Ábrela con <strong>Archivos (Files) de Google</strong>. Con otros
+        gestores, Android puede no dejar instalar.</li>
+      <li>Android pedirá permiso para instalar apps de origen desconocido, y
+        Play Protect puede analizarla antes. Es lo normal fuera de Google Play.</li>
+      <li>Ábrela, concede el micrófono, y la primera vez que uses un idioma
+        déjala descargarlo.</li>
+    </ol>
+
+    <h3>Comprobar que la APK es la nuestra</h3>
+    <p>Las dos huellas sirven para comprobar que lo descargado es lo nuestro y
+      no una copia modificada. No son claves secretas: la segunda es la huella
+      <em>pública</em> del certificado con el que se firman todas las
+      versiones, la misma de las otras dos aplicaciones.</p>
+    <p>APK (1.0.0) SHA-256: <code>5484344a9dca9b003fc348a6d2660997d23b00d4e39fbda31881a07227311fdf</code></p>
+    <p><code>SHA-256: 40:EA:E6:CA:4A:6C:CE:5D:38:D6:61:A4:8D:9B:64:18:25:4F:01:3E:D7:75:83:4A:98:3B:E9:82:73:AF:C2:29</code></p>
+
+    <h2>Privacidad</h2>
+    <ul>
+      <li><strong>La conversación no sale del teléfono</strong>: se oye, se
+        traduce y se habla ahí.</li>
+      <li><strong>No registra lo que oye</strong>: el registro de fallos viene
+        apagado.</li>
+      <li><strong>Una palabra, y solo si la pides</strong>: cuando el traductor
+        falla con un término y pulsas el botón de buscarlo, se consulta
+        Wikipedia enviando <em>esa palabra sola</em>, nunca la frase. Lo
+        aprendido se guarda para no volver a preguntarlo.</li>
+      <li>El diccionario que vas construyendo se queda en la carpeta privada de
+        la app.</li>
+    </ul>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Android 8 o superior, procesador ARM de 64 bits.</li>
+      <li>El reconocedor de voz y el motor de voz del propio móvil.</li>
+      <li>Conexión solo la primera vez de cada idioma.</li>
+    </ul>
+
+    <h2>Licencia y créditos</h2>
+    <p>Pipe-Políglota es © 2026 pipataki, todos los derechos reservados: se
+      reparte la aplicación, no el código fuente. Lleva dentro componentes con
+      licencia Apache 2.0, de Alpha Cephei (Vosk y su modelo de voz español),
+      Google (ML Kit Translation) y el proyecto JNA. El androide del icono es un
+      dibujo propio.</p>
+    <p>Sus hermanas: <a href="andro-kontrol.html">Andro-Kontrol</a> para manejar
+      el móvil, y <a href="index.html">VoiceController</a> para el ordenador
+      (software libre, LGPLv3).</p>
+
+    <h2>Contacto</h2>
+    <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
+
+    <section lang="en" aria-labelledby="en-titulo">
+      <h2 id="en-titulo">In English</h2>
+      <p><strong>Pipe-Políglota</strong> turns what you say in Spanish into
+        another language, out loud. Say the language —«inglés», «francés»,
+        «chino»…— and then your sentence. It translates <em>on the phone</em>
+        (each language downloads once, then works offline), checks itself by
+        translating back before speaking, and learns the terms it gets wrong.
+        Version 1.0.0, tested on a Motorola Moto G31 with Android 12.
+        <a href="https://github.com/pipataki/Pipe-Poliglota/releases/download/v1.0.0/Pipe-Poliglota-1.0.0.apk">Download
+        the APK</a> and open it with Google Files to install. © 2026 pipataki,
+        all rights reserved; the source code is not published.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 pipataki</p>
+    </footer>
+  </main>
+</body>
+</html>
