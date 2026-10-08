@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pipataki — Pipe-Logic</title>
+  <meta name="description" content="Pipe-Logic: editor de lógica y matemáticas con los símbolos de verdad, con botones o al dictado, que además calcula: tablas de verdad, ecuaciones, derivadas e integrales.">
+  <style>
+    :root {
+      --fondo: #ffffff; --texto: #1a1a1a; --suave: #4a4a4a;
+      --enlace: #0a58ca; --borde: #d0d0d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #111111; --texto: #f2f2f2; --suave: #c8c8c8;
+              --enlace: #8ab4ff; --borde: #3a3a3a; }
+    }
+    html { font-size: 112.5%; }
+    body {
+      margin: 0; background: var(--fondo); color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    header img { width: 80px; height: 80px; border-radius: 50%; }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+    p, li { max-width: 38rem; }
+    .estado { color: var(--suave); }
+    a { color: var(--enlace); text-underline-offset: 0.15em; }
+    a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
+    section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
+    nav a[aria-current="page"] { font-weight: 700; color: var(--texto); text-decoration: none; }
+    code.formula { font-size: 1.05em; }
+    footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Proyectos">
+      <a href="index.html">VoiceController</a> ·
+      <a href="andro-kontrol.html">Andro-Kontrol</a> ·
+      <a href="pi-po.html">Pipe-Políglota</a> ·
+      <a href="pipe-logic.html" aria-current="page">Pipe-Logic</a>
+    </nav>
+
+    <header>
+      <img src="pipe-logic-icono.png" alt="Icono de Pipe-Logic: el símbolo de consecuencia lógica en un círculo, con el letrero Pipe-Logic">
+      <h1>Pipe-Logic</h1>
+    </header>
+
+    <p><strong>Escribe lógica y matemáticas con los símbolos de verdad, con
+      botones o al dictado, y calcula con lo escrito.</strong> Pensado para
+      estudiar —nació con la asignatura de Lógica y Estructuras Discretas— y,
+      como sus hermanas, para poder usarse sin manos.</p>
+
+    <ul>
+      <li><strong>Los símbolos que no están en el teclado</strong>, a un toque:
+        <code class="formula">¬ ∧ ∨ → ↔ ⊨ ∀ ∃ ∈ ⊆ ∪ ∩ ℕ ℝ ∑ ∫ √ π</code>, índices
+        y letras griegas. Escribe texto normal, que se copia y pega en
+        cualquier sitio.</li>
+      <li><strong>Al dictado</strong>: «pe and no cu implica erre» se escribe
+        <code class="formula">p ∧ ¬q → r</code>; «equis sub uno», «super dos»,
+        «tres coma catorce», «cuatro sobre dos»… El reconocimiento de voz va en
+        tu ordenador, sin conexión.</li>
+      <li><strong>Lógica</strong>: ¿está bien formada?, tabla de verdad,
+        tautología o contradicción, equivalencia y consecuencia lógica con
+        contraejemplo, árbol sintáctico, formas normales. Con las reglas del
+        libro de la UNED.</li>
+      <li><strong>Cálculo exacto</strong>: <code class="formula">1 ÷ 3 = 1/3 (≈ 0,333333)</code>,
+        <code class="formula">√2 · √2 = 2</code>. Nada de arrastrar
+        aproximaciones: el decimal, solo al final. Combinatoria, divisibilidad,
+        conjuntos. Lo que no se puede calcular dice «indeterminado» y por
+        qué.</li>
+      <li><strong>Álgebra</strong>: ecuaciones y sistemas, simplificar,
+        factorizar, derivar e integrar: «integral entre cero y pi de seno de
+        equis» da <code class="formula">2</code>.</li>
+      <li><strong>También en el móvil</strong>, con su app: se empareja con tu
+        ordenador comparando un código que el ordenador dice en voz alta.</li>
+    </ul>
+
+    <p class="estado">Versión 0.1.0, la primera. Para Linux; Windows vendrá
+      después. Si se detectan fallos por uso, se agradece el reporte.</p>
+
+    <h2>Descarga</h2>
+    <ul>
+      <li><a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic-0.1.0.zip">Paquete
+        de instalación 0.1.0</a> (Linux, zip). Lleva dentro la app del móvil.</li>
+      <li><a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic-0.1.0.apk">App
+        para Android</a> (apk), por si la quieres sola.</li>
+      <li>Manual en PDF,
+        <a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic_Manual_0.1.0_ES.pdf">en español</a>
+        o <a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic_Manual_0.1.0_EN.pdf" hreflang="en">en inglés</a>.
+        Accesible: se puede leer con lector de pantalla.</li>
+      <li>Todas las versiones, en
+        <a href="https://github.com/pipataki/Pipe-Logic/releases">GitHub</a>.</li>
+    </ul>
+
+    <h3>Cómo se instala</h3>
+    <ol>
+      <li>Descomprime el zip y, en esa carpeta, ejecuta <code>./install.sh</code>.
+        Descarga el modelo de voz y te pregunta el micrófono y la dirección
+        para el móvil. Si le falta algo al sistema, te dice qué instalar.</li>
+      <li>Arranca con <code>./pipelogic.sh --abrir</code>.</li>
+      <li>En el móvil, instala la APK (con <strong>Archivos de Google</strong>),
+        pon la dirección del ordenador y compara el código la primera vez.</li>
+    </ol>
+
+    <h3>Comprobar que la APK es la nuestra</h3>
+    <p>Las dos huellas sirven para comprobar que lo descargado es lo nuestro y
+      no una copia modificada. La segunda es la huella <em>pública</em> del
+      certificado con el que se firman todas las versiones, la misma de las
+      otras aplicaciones.</p>
+    <p>APK (0.1.0) SHA-256: <code>49800c6094fa4c67b6f3f6bfd0b5130ffb1e242f0d20904283c0ff8953351297</code></p>
+    <p><code>SHA-256: 40:EA:E6:CA:4A:6C:CE:5D:38:D6:61:A4:8D:9B:64:18:25:4F:01:3E:D7:75:83:4A:98:3B:E9:82:73:AF:C2:29</code></p>
+
+    <h2>Privacidad</h2>
+    <ul>
+      <li><strong>Todo ocurre en tu ordenador</strong>: la voz se reconoce y
+        los cálculos se hacen ahí, sin conexión.</li>
+      <li><strong>Del móvil al ordenador, cifrado</strong>, y solo con el
+        ordenador con el que te emparejaste.</li>
+      <li>Lo que escribes se queda en el navegador de cada aparato.</li>
+    </ul>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Linux con Python 3.10 o más. El instalador dice qué falta.</li>
+      <li>Para el móvil: Android 7 o superior.</li>
+      <li>Conexión solo al instalar (descarga 120 MB de modelos).</li>
+    </ul>
+
+    <h2>Licencia y créditos</h2>
+    <p>Pipe-Logic es software libre, © 2026 pipataki, con licencia LGPLv3.
+      Usa Vosk y su modelo español (Alpha Cephei, Apache 2.0), sympy (BSD),
+      Flask (BSD), Piper (GPLv3) con la voz «sharvard» (CC BY 3.0, Universidad
+      de Edimburgo), y parte del código de VoiceController.</p>
+    <p>Sus hermanas: <a href="index.html">VoiceController</a> para manejar el
+      ordenador, <a href="andro-kontrol.html">Andro-Kontrol</a> para el móvil y
+      <a href="pi-po.html">Pipe-Políglota</a> para traducir.</p>
+
+    <h2>Contacto</h2>
+    <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
+
+    <section lang="en" aria-labelledby="en-titulo">
+      <h2 id="en-titulo">In English</h2>
+      <p><strong>Pipe-Logic</strong> is an editor for logic and mathematics
+        with the real symbols, by buttons or by voice (in Spanish), that also
+        calculates: truth tables, normal forms, exact arithmetic, equations,
+        derivatives and integrals. It runs on your Linux computer, offline,
+        with an Android companion app paired by a spoken code. Version 0.1.0.
+        <a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic-0.1.0.zip">Download
+        the package</a> or read the
+        <a href="https://github.com/pipataki/Pipe-Logic/releases/download/v0.1.0/Pipe-Logic_Manual_0.1.0_EN.pdf">manual in English</a>.
+        Free software, © 2026 pipataki, LGPLv3.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 pipataki</p>
+    </footer>
+  </main>
+</body>
+</html>
