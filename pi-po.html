@@ -70,6 +70,10 @@
         traducción por su altavoz. Si nadie habla, el turno pasa solo al otro,
         y empieza el primero que hable. Sin auricular, todo sigue por el
         móvil.</li>
+      <li><strong>Lo que te contestan, con el traductor de Firefox</strong>: el
+        mismo del navegador, libre, gratuito y sin conexión. Suena más natural.
+        Traduce directo del inglés; los demás idiomas pasan por el inglés y
+        tardan algo más.</li>
       <li><strong>Comprueba lo que va a decir</strong>: antes de hablar traduce
         la frase <em>de vuelta</em> y mira qué se ha perdido. Si algo baila, lo
         avisa; y muchas veces lo arregla solo.</li>
@@ -92,9 +96,16 @@
         mueve la boca mientras habla.</li>
     </ul>
 
-    <p class="estado">Versión 1.8.0. Probada a diario en un móvil con Android
-      12; en otros puede haber diferencias, sobre todo en las voces instaladas.
-      Si se detectan fallos por uso, se agradece el reporte.</p>
+    <p class="estado">Versión 1.8.0. El traductor de Firefox se probó en un
+      móvil con Android 12, con noticias de la tele en inglés y en polaco; la
+      1.8.0 tal cual sale sin la tanda de uso diario de las anteriores. En
+      otros móviles puede haber diferencias, sobre todo en las voces
+      instaladas. Si se detectan fallos por uso, se agradece el reporte.</p>
+    <p class="estado"><strong>Desarrollo en pausa.</strong> Las pruebas de
+      traducción siguen en un proyecto hermano en preparación. Pipe-Políglota
+      queda a la espera de que el traductor de Firefox traduzca entre más
+      idiomas sin pasar por el inglés, y eso depende de sus
+      desarrolladores.</p>
 
     <h2>Descarga</h2>
     <ul>
@@ -140,17 +151,21 @@
 
     <h2>Requisitos</h2>
     <ul>
-      <li>Android 8 o superior, procesador ARM de 64 bits.</li>
+      <li>Android 8 o superior, procesador ARM de 64 bits (el traductor de
+        Firefox pide Android 9).</li>
       <li>El reconocedor de voz y el motor de voz del propio móvil.</li>
-      <li>Conexión solo la primera vez de cada idioma.</li>
+      <li>Conexión solo la primera vez de cada idioma, y de cada modelo de
+        Firefox (de 20 a 40 MB, de los servidores de Mozilla).</li>
     </ul>
 
     <h2>Licencia y créditos</h2>
     <p>Pipe-Políglota es © 2026 pipataki, todos los derechos reservados: se
       reparte la aplicación, no el código fuente. Lleva dentro componentes con
       licencia Apache 2.0, de Alpha Cephei (Vosk y su modelo de voz español),
-      Google (ML Kit Translation) y el proyecto JNA. El androide del icono es un
-      dibujo propio.</p>
+      Google (ML Kit Translation) y el proyecto JNA, y el traductor de Firefox
+      (<a href="https://github.com/browsermt/bergamot-translator">bergamot-translator</a>,
+      MPL-2.0, con Marian NMT y otras piezas libres; sus licencias van dentro
+      de la APK). El androide del icono es un dibujo propio.</p>
     <p>Sus hermanas: <a href="andro-kontrol.html">Andro-Kontrol</a> para manejar
       el móvil, y <a href="index.html">VoiceController</a> para el ordenador
       (software libre, LGPLv3).</p>
@@ -168,7 +183,12 @@
         In conversation mode it then listens for the reply in the other
         language and says it to you in Spanish. With a Bluetooth earpiece,
         you speak and listen through it while the other person uses the phone.
-        Version 1.8.0, tested on a Motorola Moto G31 with Android 12.
+        Replies are translated with Firefox's offline translator (other
+        languages go through English). Version 1.8.0: the Firefox translator
+        was tested on a Motorola Moto G31 with Android 12, but this release
+        has not had the usual daily use. Development is paused: translation
+        work continues in a sibling project, and this app waits for Firefox's
+        translator to support more direct language pairs.
         <a href="https://github.com/pipataki/Pipe-Poliglota/releases/download/v1.8.0/Pipe-Poliglota-1.8.0.apk">Download
         the APK</a> and open it with Google Files to install. © 2026 pipataki,
         all rights reserved; the source code is not published.</p>
