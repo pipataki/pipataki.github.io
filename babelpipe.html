@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pipataki — BabelPipe</title>
+  <meta name="description" content="BabelPipe: traductor de viva voz con tu propio servidor. El móvil pone el micro y el altavoz; tu ordenador oye, traduce y le devuelve el texto. Software libre (LGPLv3).">
+  <style>
+    :root {
+      --fondo: #ffffff; --texto: #1a1a1a; --suave: #4a4a4a;
+      --enlace: #0a58ca; --borde: #d0d0d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #111111; --texto: #f2f2f2; --suave: #c8c8c8;
+              --enlace: #8ab4ff; --borde: #3a3a3a; }
+    }
+    html { font-size: 112.5%; }
+    body {
+      margin: 0; background: var(--fondo); color: var(--texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    header img { width: 80px; height: 80px; border-radius: 50%; }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin-top: 2.2rem; }
+    p, li { max-width: 38rem; }
+    .estado { color: var(--suave); }
+    a { color: var(--enlace); text-underline-offset: 0.15em; }
+    a:focus-visible { outline: 3px solid var(--enlace); outline-offset: 3px; }
+    section[lang="en"] { border-top: 1px solid var(--borde); margin-top: 2.5rem; }
+    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
+    nav a[aria-current="page"] { font-weight: 700; color: var(--texto); text-decoration: none; }
+    footer { color: var(--suave); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Proyectos">
+      <a href="index.html">VoiceController</a> ·
+      <a href="andro-kontrol.html">Andro-Kontrol</a> ·
+      <a href="pi-po.html">Pipe-Políglota</a> ·
+      <a href="pipe-logic.html">Pipe-Logic</a> ·
+      <a href="babelpipe.html" aria-current="page">BabelPipe</a>
+    </nav>
+
+    <header>
+      <img src="babelpipe-icono.png" alt="Icono de BabelPipe: un androide rodeado de saludos en varios alfabetos, delante de la torre de Babel">
+      <h1>BabelPipe</h1>
+    </header>
+
+    <p><strong>Traductor de viva voz con tu propio servidor.</strong> El móvil
+      solo pone el micro y el altavoz; tu ordenador oye lo que se dice,
+      reconoce en qué idioma va, lo traduce y le devuelve el texto al móvil,
+      que lo lee en voz alta.</p>
+
+    <ul>
+      <li><strong>Sin decir el idioma</strong>: eliges con quién hablas
+        (inglés, polaco…) y BabelPipe distingue solo quién habla. Lo tuyo lo
+        traduce al idioma del otro, y lo del otro al tuyo.</li>
+      <li><strong>Oye con Whisper y traduce con el traductor de
+        Firefox</strong>, los dos libres y en tu ordenador: sin servicios de
+        pago y sin mandar nada fuera.</li>
+      <li><strong>Espera a que se calle quien habla</strong> para leer la
+        traducción, y mientras lee no escucha, para no traducirse a sí
+        mismo.</li>
+      <li><strong>Con auricular Bluetooth</strong>, cada traducción a su sitio:
+        lo que dice el otro te llega al oído, y lo que dices tú sale por el
+        altavoz del móvil para el otro. Las dos pueden sonar a la vez.</li>
+      <li><strong>App de Android o navegador</strong>: la app se empareja con
+        el ordenador comparando un código que dicen los dos; también vale un
+        navegador, en el móvil o en otro ordenador.</li>
+      <li>El servidor funciona en <strong>Linux</strong> y en
+        <strong>Windows</strong>, y también en un servidor sin pantalla.</li>
+      <li>Es <strong>software libre</strong>, con licencia LGPLv3.</li>
+    </ul>
+
+    <p class="estado">Versión 0.1.0, la primera. Probada en un móvil con
+      Android 12 y con auricular Bluetooth, con noticias de la tele en inglés y
+      en polaco, contra servidores Linux; el servidor de Windows se probó en
+      una máquina virtual. Los demás idiomas de la lista aún no se han probado
+      de viva voz. Si se detectan fallos por uso, se agradece el reporte.</p>
+
+    <h2>Descarga</h2>
+    <ul>
+      <li><a href="https://github.com/pipataki/BabelPipe/releases/download/v0.1.0/BabelPipe-0.1.0.zip">Paquete
+        de instalación 0.1.0</a> (zip, 10 MB), el servidor para Linux y
+        Windows. Lleva dentro la app de Android.</li>
+      <li><a href="https://github.com/pipataki/BabelPipe/releases/download/v0.1.0/BabelPipe-0.1.0.apk">App
+        para Android</a> (apk), por si la quieres sola.</li>
+      <li>Todas las versiones y el código fuente, en
+        <a href="https://github.com/pipataki/BabelPipe">GitHub</a>.</li>
+    </ul>
+
+    <h3>Cómo se instala</h3>
+    <ol>
+      <li>En el ordenador, descomprime el zip y ejecuta
+        <code>./install.sh</code> (Linux) o <code>install.bat</code> (Windows,
+        con Python 3.10 o más nuevo). Pregunta tu idioma, los de con quién
+        hablarás y la dirección para el móvil, y descarga los modelos (Whisper,
+        1,5 GB la primera vez; unos 35 MB por idioma y sentido).</li>
+      <li>Arráncalo con <code>./babelpipe.sh</code> (o
+        <code>.\babelpipe.bat</code>). El cortafuegos tiene que dejar pasar el
+        puerto 5100 (TCP).</li>
+      <li>En el móvil, instala la APK abriéndola con <strong>Archivos (Files)
+        de Google</strong>, escribe la dirección que dio el instalador y
+        comprueba que el código que enseña es el que dice el ordenador.</li>
+    </ol>
+    <p>El paso a paso, y cómo instalarlo en un servidor, está en el
+      <a href="https://github.com/pipataki/BabelPipe#readme">LEEME</a>.</p>
+
+    <h3>Comprobar que la APK es la nuestra</h3>
+    <p>Las dos huellas sirven para comprobar que lo descargado es lo nuestro y
+      no una copia modificada. No son claves secretas: la segunda es la huella
+      <em>pública</em> del certificado con el que se firman todas nuestras
+      aplicaciones.</p>
+    <p>APK (0.1.0) SHA-256: <code>2b7d74efeed6333135edee504b6659c21f3869dfaaac4caa4f9b7d2f18744457</code></p>
+    <p><code>SHA-256: 40:EA:E6:CA:4A:6C:CE:5D:38:D6:61:A4:8D:9B:64:18:25:4F:01:3E:D7:75:83:4A:98:3B:E9:82:73:AF:C2:29</code></p>
+
+    <h2>Privacidad</h2>
+    <ul>
+      <li><strong>La conversación va del móvil a tu ordenador y de vuelta</strong>,
+        cifrada, y no sale de ahí: no hay servicios de terceros.</li>
+      <li>Solo se conecta fuera para <strong>descargar los modelos</strong>:
+        Whisper desde Hugging Face y los de traducción desde los servidores de
+        Mozilla.</li>
+    </ul>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Un ordenador con soltura: con Whisper medium, unos 1,8 GB de memoria
+        y unos 4-5 s por frase en un procesador de 8 núcleos sin tarjeta
+        gráfica. Con modelos más pequeños gasta menos, pero oye peor.</li>
+      <li>Para el móvil: Android 7 o superior, con el motor de voz del propio
+        móvil.</li>
+      <li>El móvil y el ordenador, en la misma red (o en una VPN).</li>
+    </ul>
+
+    <h2>Licencia y créditos</h2>
+    <p>BabelPipe es software libre, © 2026 pipataki, con licencia LGPLv3.
+      Oye con faster-whisper y los modelos Whisper (MIT) y traduce con
+      <a href="https://github.com/browsermt/bergamot-translator">bergamot-translator</a>,
+      el traductor de Firefox (MPL-2.0). La lista completa de piezas y sus
+      licencias va en el fichero AVISOS.md del paquete.</p>
+    <p>Sus hermanas: <a href="pi-po.html">Pipe-Políglota</a>, que traduce en
+      el propio móvil y sin conexión; <a href="index.html">VoiceController</a>
+      para manejar el ordenador, <a href="andro-kontrol.html">Andro-Kontrol</a>
+      para el móvil y <a href="pipe-logic.html">Pipe-Logic</a> para la lógica
+      y las matemáticas.</p>
+
+    <h2>Contacto</h2>
+    <p><a href="mailto:pipataki@pipataki.net">pipataki@pipataki.net</a></p>
+
+    <section lang="en" aria-labelledby="en-titulo">
+      <h2 id="en-titulo">In English</h2>
+      <p><strong>BabelPipe</strong> is a spoken translator backed by your own
+        server. The phone only provides the microphone and the speaker; your
+        computer listens with Whisper, tells which language is being spoken,
+        translates with Firefox's translator and sends the text back for the
+        phone to read aloud. Nothing goes to third-party services. With a
+        Bluetooth earpiece, you hear the other person's words in your ear while
+        your own come out of the phone's speaker. The server runs on Linux and
+        Windows; use the Android app or a web browser. Free software (LGPLv3),
+        version 0.1.0.
+        <a href="https://github.com/pipataki/BabelPipe/releases/download/v0.1.0/BabelPipe-0.1.0.zip">Download
+        the installation package</a> or the
+        <a href="https://github.com/pipataki/BabelPipe/releases/download/v0.1.0/BabelPipe-0.1.0.apk">Android app</a>.
+        The source code is on
+        <a href="https://github.com/pipataki/BabelPipe">GitHub</a>.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 pipataki</p>
+    </footer>
+  </main>
+</body>
+</html>
